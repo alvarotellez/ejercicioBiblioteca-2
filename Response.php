@@ -48,4 +48,45 @@ class Response
             echo $this->body;
         }
     }
+
+    //Si queremos devolver un xml, no lo usamos. Le pasamos directamente le decimos que va a ser JSON a la fuerza
+    /*
+    private function xml_encode($mixed, $domElement= null, $DOMDocument = null){
+        //Primera comprobacion: si es un documento DOM
+        if(is_null($DOMDocument)){
+            $DOMDocument = new DOMDocument;
+            $DOMDocument->formatOutput = true;
+            $this->xml_encode($mixed,$DOMDocument,$DOMDocument);
+            //ASIGNAMOS EL DOCUMENTO PARA GUARDARLO EN EL FORMATO XML(EN MI CASO LO PINTO)
+            echo $DOMDocument->saveXML();
+        }else{
+            //Segunda comprobacion: si es un array
+            if(is_array($mixed)){
+                foreach ($mixed as $index => $mixedElement){
+                    if(is_int()){
+                        if($index == 0){
+                            $node = $domElement;
+                        }else{
+                            $node = $DOMDocument->createELement($domElement->tagName);
+                            $domElement->parentNode->appendChild($node);
+                        }
+                    }else{
+                        $plural = $DOMDocument->createElement($index);
+                        $domElement->appendChild($plural);
+                        $node = $plural;
+                        if(!(rtrim($index,'s')==$index)){
+                            $singular = $DOMDocument->createElement(rtrim($index,'s'));
+                            $plural->appendChild($singular);
+                            $node = $singular;
+                        }
+                    }
+                    $this->xml_encode($mixedElement, $node, $DOMDocument);
+                }
+            }else{
+                $domElement->appendChild($DOMDocument->createTextNode($mixed));
+            }
+        }
+
+    }*/
+
 }
