@@ -43,12 +43,12 @@ class DatabaseModel
     public function getConnection(){
         return $this->_connection;
     }
-
+    //Cerrar la conexion
     public function closeConnection(){
         $this->_connection->close();
         self::$_instance=null;
     }
-
+    //Reconectar
     public function reconnect(){
         $this->_connection->close();
         self::$_instance=null;
