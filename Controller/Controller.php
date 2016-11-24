@@ -11,7 +11,6 @@ class Controller
     //SON LOS CONTROLADORES DE LOS VERBOS, POR DEFECTO NOS VA A DEVOLVER UN CÓDIGO DE ERROR
     //HAY QUE HACER UN EXTENDS DE ESTA CLASE EN CADA CONTROLLER
 
-
     public function manageGetVerb(Request $request){
         $response = new Response('405',null,null,$request->getAccept());
         $response->generate();

@@ -48,9 +48,8 @@ class Request
                 break;
             default:
                 break;
-
-            $this->$body_parameters = $parameters; //Añadimos los parametros  al cuerpo de los parametros
         }
+        $this-> body_parameters = $parameters; //Añadimos los parametros  al cuerpo de los parametros
 
     }
 
