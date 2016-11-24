@@ -20,7 +20,7 @@ function apiAutoload($classname){
             $res = true;
         }
     } elseif (preg_match('/[a-zA-Z]+Model$/', $classname)) {
-        if (file_exists(__DIR__ . '/model/' . $classname . '.php')) {require_once __DIR__ . '/model/' . $classname . '.php';
+        if (file_exists(__DIR__ . '/Model/' . $classname . '.php')) {require_once __DIR__ . '/Model/' . $classname . '.php';
             $res = true;
         }
     }
