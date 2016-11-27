@@ -15,8 +15,8 @@ function apiAutoload($classname){
     $res = false;
 
     if (preg_match('/[a-zA-Z]+Controller$/', $classname)) {
-        if (file_exists(__DIR__ . '/controller/' . $classname . '.php')) {
-            require_once __DIR__ . '/controller/' . $classname . '.php';
+        if (file_exists(__DIR__ . '/Controller/' . $classname . '.php')) {
+            require_once __DIR__ . '/Controller/' . $classname . '.php';
             $res = true;
         }
     } elseif (preg_match('/[a-zA-Z]+Model$/', $classname)) {
